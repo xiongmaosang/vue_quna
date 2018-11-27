@@ -1,15 +1,22 @@
 <template>
     <div>
-        hello world
+        <Homeheader></Homeheader>
     </div>
 </template>
 
 <script>
+    import Homeheader from './homeheader/header.vue'
+
     export default {
-        name: "home"
+        name: "home",
+        components:{
+            Homeheader
+        }
     }
+
+
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

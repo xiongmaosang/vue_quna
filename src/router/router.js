@@ -6,13 +6,13 @@ Vue.use(Router);
 const routers = [
         {
             path: "/",
-            name: "home",
+            name: "header",
             meta:{
                 auth: true,
                 keep: true
             },
             component: () => // 按需加载 aboutwebpack 打包后的名字
-                import(/* webpackChunkName: "home" */ "../components/Home.vue")
+                import(/* webpackChunkName: "homeheader" */ "../components/Home.vue")
         },
         // {
         //     path: "/list",

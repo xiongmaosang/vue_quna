@@ -25,7 +25,7 @@
 <style scoped lang="scss">
     /*1rem = html font size = 50px  设置成50好算  二倍图直接除 /50/2 */
 
-    @import '~@/assets/styles/variables.sass';
+    @import '~@/assets/styles/variables.scss';
 
     .headerWrapper {
         display: flex;

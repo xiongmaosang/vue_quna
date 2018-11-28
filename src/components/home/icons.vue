@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
 
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
@@ -75,13 +75,17 @@
                         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png',
                         desc: '全部玩乐'
                     },
-                ]
+                ],
+                swiperOption: {
+                    autoplay:false
+                },
             }
         },
+        props:['list'],
         computed: {
             pages() {
                 const pages = []
-                this.iconList.forEach((item, index) => {
+                this.list.forEach((item, index) => {
                     const page = Math.floor(index / 8)  //展示第几页
                     if (!pages[page]) {
                         pages[page] = []

@@ -38,9 +38,9 @@
 
         methods: {
             getHomeInfo() {
-                axios.get('./mock/index.json').then((res)=>{
+                axios.get('http://localhost:8080/mock/index.json ').then((res)=>{
                     res = res.data
-                    if (res.ret && res.data) {
+                    if (res.data) {
                         this.city = res.data.city
                         this.swiperList = res.data.swiperList
                         this.iconList = res.data.iconList

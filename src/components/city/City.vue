@@ -1,12 +1,9 @@
 <template>
     <div>
         <cityheader></cityheader>
-        <citysearch></citysearch>
+        <citysearch :cities="cities"></citysearch>
         <cityList :cities="cities" :hotCities="hotCities" :letter="letter"></cityList>
-        <Alphabet
-                :cities="cities"
-                @change="handleLetterChange"
-        ></Alphabet>
+        <Alphabet :cities="cities" @change="handleLetterChange"></Alphabet>
     </div>
 </template>
 
@@ -16,13 +13,14 @@
     import citysearch from './search'
     import cityList from './List'
     import Alphabet from './Alphabet'
+
     export default {
         name: "city",
         components:{
             cityheader,
             citysearch,
             cityList,
-            Alphabet
+            Alphabet,
         },
         data(){
           return {

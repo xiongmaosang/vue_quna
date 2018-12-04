@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Homeheader :city="city"></Homeheader>
+        <Homeheader></Homeheader>
         <Swiper :list="swiperList"></Swiper>
         <Icons :list="iconList"></Icons>
         <Recommend :recommend="recommend"></Recommend>
@@ -28,7 +28,6 @@
 
         data() {
             return {
-                city: '',
                 swiperList:[],
                 iconList:[],
                 recommend:[],
@@ -41,7 +40,6 @@
                 axios.get('http://localhost:8080/mock/index.json ').then((res)=>{
                     res = res.data
                     if (res.data) {
-                        this.city = res.data.city
                         this.swiperList = res.data.swiperList
                         this.iconList = res.data.iconList
                         this.recommend = res.data.recommendList

@@ -19,10 +19,13 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
+
+
     export default {
         name: "homeheader",
-        props: {
-            city: String
+        computed: {
+            ...mapState(['city'])  //我把vuex的数据映射到computed的计算属性里
         }
     }
 </script>
@@ -56,7 +59,8 @@
             color: #ccc;
         }
         .header-right {
-            width: 1.24rem;
+            min-width: 1.04rem;
+            padding: .1rem;
             float: right;
             text-align: center;
             color: #fff;

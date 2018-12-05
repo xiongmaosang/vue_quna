@@ -15,6 +15,7 @@
     import Icons from './home/icons.vue'
     import Recommend from './home/Recommend.vue'
     import Wkkend from './home/Wkkend.vue'
+    import {mapState} from 'vuex'
 
     export default {
         name: "home",
@@ -25,9 +26,12 @@
             Recommend,
             Wkkend
         },
-
+        computed:{
+            ...mapState(['city'])
+        },
         data() {
             return {
+                lastCity:'',
                 swiperList:[],
                 iconList:[],
                 recommend:[],
@@ -37,7 +41,7 @@
 
         methods: {
             getHomeInfo() {
-                axios.get('http://localhost:8080/mock/index.json ').then((res)=>{
+                axios.get('http://localhost:8080/mock/index.json?city='+this.city).then((res)=>{
                     res = res.data
                     if (res.data) {
                         this.swiperList = res.data.swiperList
@@ -49,7 +53,14 @@
             }
         },
         mounted() {
+            this.lastCity = this.city;
             this.getHomeInfo()
+        },
+        activated() {
+            if(this.lastCity !== this.city){
+                this.lastCity = this.city;
+                this.getHomeInfo()
+            }
         }
     }
 

@@ -19,13 +19,14 @@
 </template>
 
 <script>
-    import {mapState} from 'vuex';
+    import {mapState,mapGetters} from 'vuex';
 
 
     export default {
         name: "homeheader",
         computed: {
-            ...mapState(['city'])  //我把vuex的数据映射到computed的计算属性里
+            ...mapState(['city']),  //我把vuex的数据映射到computed的计算属性里
+            ...mapGetters(['doubleCity'])
         }
     }
 </script>

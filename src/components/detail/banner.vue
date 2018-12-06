@@ -2,21 +2,21 @@
     <div>
         <div class="banner" @click="handleBannerClick">
             <img class="banner-img"
-                 src="http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg" alt="">
+                 :src="bannerImg" alt="">
 
             <div class="banner-info">
                 <div class="banner-title">
-                    dalian
+                    {{this.sightName}}
                 </div>
 
                 <div class="banner-number">
                     <span class="iconfont">&#xe692;</span>
-                    39
+                    {{this.bannerImg.length}}
                 </div>
             </div>
         </div>
 
-        <Gallary @close="handleGallaryClose" :imgs="imgs" v-show="showGallaty"></Gallary>
+        <Gallary @close="handleGallaryClose" :imgs="gallaryImgs" v-show="showGallaty"></Gallary>
     </div>
 </template>
 
@@ -25,9 +25,9 @@
 
     export default {
         name: "banner",
+        props:['sightName','bannerImg','gallaryImgs'],
         data() {
             return {
-                imgs: ['http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg','http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_600x330_95a1ab2b.jpg'],
                 showGallaty: false
             }
         },

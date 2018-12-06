@@ -19,7 +19,6 @@
         name: 'CommonGallary',
         props: {
             imgs: {
-                type: Array,
                 default () {
                     return []
                 }

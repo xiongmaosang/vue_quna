@@ -16,16 +16,21 @@
             </div>
         </div>
 
-        <Gallary @close="handleGallaryClose" :imgs="gallaryImgs" v-show="showGallaty"></Gallary>
+        <FadeAnimation>
+            <Gallary @close="handleGallaryClose" :imgs="gallaryImgs" v-show="showGallaty"></Gallary>
+        </FadeAnimation>
+
     </div>
 </template>
 
 <script>
     import Gallary from '../common/gallary/Gallary';
 
+    import FadeAnimation from '../common/fade/fade';
+
     export default {
         name: "banner",
-        props:['sightName','bannerImg','gallaryImgs'],
+        props: ['sightName', 'bannerImg', 'gallaryImgs'],
         data() {
             return {
                 showGallaty: false
@@ -35,12 +40,13 @@
             handleBannerClick() {
                 this.showGallaty = true
             },
-            handleGallaryClose(){
+            handleGallaryClose() {
                 this.showGallaty = false
             }
         },
         components: {
-            Gallary
+            Gallary,
+            FadeAnimation
         }
     }
 </script>
@@ -52,9 +58,11 @@
         overflow: hidden;
         height: 0;
         padding-bottom: 55%;
+
         .banner-img {
             width: 100%;
         }
+
         .banner-info {
             display: flex;
             position: absolute;

@@ -14,9 +14,7 @@
 <script>
     export default {
         name: 'HomeSwiper',
-        props: {
-            list: Array
-        },
+        props:['list'],
         data() {
             return {
                 swiperOption: {

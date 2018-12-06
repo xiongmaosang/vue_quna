@@ -15,9 +15,7 @@
 <script>
     export default {
         name: 'CityAlphabet',
-        props: {
-            cities: Object
-        },
+        props: ['cities'],
         computed: {
             letters() {
                 const letters = []   // 存储字母的列表ABCDEFG等
